@@ -22,4 +22,15 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+
+	public function test()
+	{
+		$browser = new Buzz\Browser();
+		$response = $browser->get('http://www.google.com');
+
+		echo $browser->getLastRequest()."\n";
+		echo $response;
+	}
+	
 }
