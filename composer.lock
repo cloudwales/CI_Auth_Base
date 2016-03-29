@@ -1,10 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1601e08b01b4fe35efb55649b144df12",
+    "hash": "48e4596ca363f8f7d6d93c5543a6f961",
+    "content-hash": "5398218441ffa94f62caa5283a905842",
     "packages": [
         {
             "name": "kriswallsmith/buzz",
@@ -92,6 +93,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.2.4"
+    },
     "platform-dev": []
 }
