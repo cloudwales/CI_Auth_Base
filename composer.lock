@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "447fe4000c401c5adc203e50e8fc073a",
-    "content-hash": "ee92ea20115099780b431957456d385f",
+    "hash": "1746b0ee66862cd6f37cb2ea5fc03225",
+    "content-hash": "2ef588b3060c8a7ceaf90d5a11d82401",
     "packages": [
         {
             "name": "jamierumbelow/codeigniter-base-model",
@@ -91,7 +91,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.2.4"
+        "php": ">=5.2.4",
+        "ext-mysql": "*"
     },
     "platform-dev": []
 }
