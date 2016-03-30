@@ -62,10 +62,10 @@ if(! defined('ENVIRONMENT') )
 {
 $domain = strtolower($_SERVER['HTTP_HOST']);
 switch($domain) {
-case 'https://agile-retreat-84751.herokuapp.com' :
+case 'agile-retreat-84751.herokuapp.com' :
 define('ENVIRONMENT', 'production');
 break;
-case 'http://heroku:8888' :
+case 'heroku:8888' :
 define('ENVIRONMENT', 'testing');
 break;
 default :
