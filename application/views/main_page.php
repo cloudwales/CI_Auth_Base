@@ -8,6 +8,9 @@
     </div>
 
     <div class="container">
+    <div class="ro">
+        <?php echo $this->session->flashdata('message'); ?>
+    </div>
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
@@ -27,9 +30,4 @@
         </div>
       </div>
 
-      <hr>
-
-      <footer>
-        <p>&copy; 2015 Company, Inc.</p>
-      </footer>
-    </div> <!-- /container -->
+      

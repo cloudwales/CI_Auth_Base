@@ -63,14 +63,14 @@ class Auth extends CI_Controller {
 			{
 				//if the login is successful
 				//redirect them back to the home page
-				$this->session->set_flashdata('message', $this->ion_auth->messages());
+				$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You are now logged in!</div>');
 				redirect('/', 'refresh');
 			}
 			else
 			{
 				// if the login was un-successful
 				// redirect them back to the login page
-				$this->session->set_flashdata('message', $this->ion_auth->errors());
+				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Login Failed! Please try again.</div>');
 				redirect('auth/login', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
 			}
 		}
@@ -105,7 +105,7 @@ class Auth extends CI_Controller {
 
 		// redirect them to the login page
 		$this->session->set_flashdata('message', $this->ion_auth->messages());
-		redirect('auth/login', 'refresh');
+		redirect('/', 'refresh');
 	}
 
 	// change password

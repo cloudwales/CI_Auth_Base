@@ -60,11 +60,13 @@
                   </ul>
             </li>
         </ul>
-            
-            <?php 
+
+        <?php 
+
+            if (!$this->ion_auth->logged_in())
+            {
                 $attributes = array('class' => 'navbar-form navbar-right');
-                echo form_open('auth/login', $attributes);
-            ?>
+                echo form_open('auth/login', $attributes); ?>
                 <div class="form-group">
                   <input type="text" placeholder="Email" name="identity" id="identity" class="form-control">
                 </div>
@@ -72,7 +74,16 @@
                   <input type="password" placeholder="Password" name="password" id="password" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-success">Sign in</button>
-            <?php echo form_close();?>
+                <?php echo form_close();?>
+            
+            <?php } else { ?>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="<?php echo base_url('auth/logout'); ?>">Logout</a></li>
+            </ul>
+            
+            <?php } ?>
+
 
         </div><!--/.navbar-collapse -->
       </div>
