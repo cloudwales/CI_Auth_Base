@@ -55,7 +55,24 @@ include "./vendor/autoload.php";
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+	// Old Enviroment Code
+	// define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+
+if(! defined('ENVIRONMENT') )
+{
+$domain = strtolower($_SERVER['HTTP_HOST']);
+switch($domain) {
+case 'https://agile-retreat-84751.herokuapp.com' :
+define('ENVIRONMENT', 'production');
+break;
+case 'http://heroku:8888' :
+define('ENVIRONMENT', 'testing');
+break;
+default :
+define('ENVIRONMENT', 'development');
+break;
+}
+}
 
 /*
  *---------------------------------------------------------------

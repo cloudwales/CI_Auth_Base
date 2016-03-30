@@ -4,3 +4,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # Rewrite all other URLs to index.php/URL
 RewriteRule ^(.*)$ index.php?url=$1 [PT,L]
 ErrorDocument 404 index.php
+
+SetEnvIf Host https://agile-retreat-84751.herokuapp.com$ CI_ENV=production
+SetEnvIf Host http://heroku:8888$ CI_ENV=testing
+SetEnvIf Host localhost$ CI_ENV=development
