@@ -61,6 +61,11 @@ class Auth extends CI_Controller {
 
 			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
 			{
+				if ($this->ion_auth->is_admin())
+				{
+					redirect('dashboard');
+				}
+	
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You are now logged in!</div>');
@@ -104,7 +109,7 @@ class Auth extends CI_Controller {
 		$logout = $this->ion_auth->logout();
 
 		// redirect them to the login page
-		$this->session->set_flashdata('message', $this->ion_auth->messages());
+		$this->session->set_flashdata('message', '<div class="alert alert-info" role="alert">You are now logged out!</div>');
 		redirect('/', 'refresh');
 	}
 
