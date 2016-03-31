@@ -1,4 +1,7 @@
-<h1><?php echo lang('create_user_heading');?></h1>
+<div class="container">
+ <div id="infoMessage"><?php echo $message;?></div>
+
+<h1 class="page-header"><?php echo lang('create_user_heading');?></h1>
 <p><?php echo lang('create_user_subheading');?></p>
 
 <div id="infoMessage"><?php echo $message;?></div>
@@ -52,6 +55,11 @@
       </p>
 
 
-      <p><?php echo form_submit('submit', lang('create_user_submit_btn'));?></p>
+      <p>
+        <?php echo form_submit('submit', lang('create_user_submit_btn'), 'class="btn btn-success"');?>
+        <a href="<?php echo base_url('auth/index'); ?>" class="btn btn-primary">Cancel</a>
+      </p>
 
 <?php echo form_close();?>
+
+</div>

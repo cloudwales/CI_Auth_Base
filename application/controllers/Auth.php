@@ -39,8 +39,9 @@ class Auth extends CI_Controller {
 			{
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
-
+			$this->load->view('admin/template/header');
 			$this->_render_page('auth/index', $this->data);
+			$this->load->view('admin/template/footer');
 		}
 	}
 
@@ -389,8 +390,10 @@ class Auth extends CI_Controller {
 			// insert csrf check
 			$this->data['csrf'] = $this->_get_csrf_nonce();
 			$this->data['user'] = $this->ion_auth->user($id)->row();
-
+			$this->load->view('admin/template/header');
 			$this->_render_page('auth/deactivate_user', $this->data);
+			$this->load->view('admin/template/footer');
+
 		}
 		else
 		{
@@ -520,8 +523,10 @@ class Auth extends CI_Controller {
                 'type'  => 'password',
                 'value' => $this->form_validation->set_value('password_confirm'),
             );
-
+            $this->load->view('admin/template/header');
             $this->_render_page('auth/create_user', $this->data);
+            $this->load->view('admin/template/footer');
+
         }
     }
 
@@ -672,8 +677,9 @@ class Auth extends CI_Controller {
 			'id'   => 'password_confirm',
 			'type' => 'password'
 		);
-
+		$this->load->view('admin/template/header');
 		$this->_render_page('auth/edit_user', $this->data);
+		$this->load->view('admin/template/footer');
 	}
 
 	// create a new group
