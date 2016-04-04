@@ -73,14 +73,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$url=parse_url(getenv("mysql://be581f53f6c3cc:e3dffb73@us-cdbr-east-05.cleardb.net/heroku_29745033f6a8f32?reconnect=true"));
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'us-cdbr-iron-east-03.cleardb.net',
-	'username' => 'b0343dcc3e91e7',
-	'password' => 'c4182499',
-	'database' => 'heroku_29bb6757f94a30e',
+	'hostname' => '',
+	'username' => '',
+	'password' => '',
+	'database' => '',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
