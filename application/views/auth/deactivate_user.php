@@ -15,10 +15,10 @@
   <?php echo form_hidden($csrf); ?>
   <?php echo form_hidden(array('id'=>$user->id)); ?>
 
-  <p>
+<p>
   	<?php echo form_submit('submit', 'Deactivate', 'class="btn btn-danger"');?>
 	<a href="<?php echo base_url('auth/index'); ?>" class="btn btn-primary">Cancel</a>
-  </p>
+</p>
 
 <?php echo form_close();?>
 

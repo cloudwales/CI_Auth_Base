@@ -390,6 +390,7 @@ class Auth extends CI_Controller {
 			// insert csrf check
 			$this->data['csrf'] = $this->_get_csrf_nonce();
 			$this->data['user'] = $this->ion_auth->user($id)->row();
+			
 			$this->load->view('admin/template/header');
 			$this->_render_page('auth/deactivate_user', $this->data);
 			$this->load->view('admin/template/footer');
@@ -724,8 +725,9 @@ class Auth extends CI_Controller {
 				'type'  => 'text',
 				'value' => $this->form_validation->set_value('description'),
 			);
-
+			$this->load->view('admin/template/header');
 			$this->_render_page('auth/create_group', $this->data);
+			$this->load->view('admin/template/footer');
 		}
 	}
 
@@ -789,9 +791,18 @@ class Auth extends CI_Controller {
 			'type'  => 'text',
 			'value' => $this->form_validation->set_value('group_description', $group->description),
 		);
-
+		$this->load->view('admin/template/header');
 		$this->_render_page('auth/edit_group', $this->data);
+		$this->load->view('admin/template/footer');
 	}
+
+
+	public function delete_user($id)
+	{
+		$this->ion_auth->delete_user($id);
+		redirect('auth');
+	}
+	
 
 
 	function _get_csrf_nonce()
